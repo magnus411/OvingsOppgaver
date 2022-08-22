@@ -36,7 +36,6 @@ class TtoC {
 
         
 
-        System.out.println(args[0]);
 
         // Looping through the array and printing out the converted values.
         for (int i = 0; i < dataSet.length; i++) {
