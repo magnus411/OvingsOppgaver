@@ -1,43 +1,38 @@
-
-
-
-
-
-
-
-
 class TtoC {
 
-
-
-
+    // Defining the function convert.
     private Double convert(Double centi) {
 
-        //Logikk 
-        //Konverterer fra Tommer til Centimeter
+        //Logic 
+        //Converting inces to cm
 
-        //Definerer tomme dom en double med verdi 2.54
-        //Definerer at centi til tommer er centi / tomme
+
+        //Defining that Inches is a dobule with value 2.54
         Double tomme = 2.54;
+        //Definding that cm to inces is cm / inces
         Double ctt = centi / tomme;
 
-        //Returnerer den koverterte verdien
+        //Returning the converted value
         return ctt;
     }
 
 
 
 
+    // Creating a new array with the values 2.3, 1.2, 1.5, 10.2, 59.42.
     private static Double[] dataSet = new Double[] {2.3, 1.2, 1.5, 10.2, 59.42};
 
 
 
+    // The main function.
     public static void main(String[] args)  {
 
 
-        //Skaper et objekt
+    // Creating a new instance of the class TtoC.
         TtoC converter = new TtoC();
 
+        
+        // Looping through the array and printing out the converted values.
         for (int i = 0; i < dataSet.length; i++) {
             System.out.println(converter.convert(dataSet[i]));
 
