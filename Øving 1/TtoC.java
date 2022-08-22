@@ -1,3 +1,6 @@
+//Program for converting inces to cm
+
+
 class TtoC {
 
     // Defining the function convert.
@@ -17,21 +20,21 @@ class TtoC {
     }
 
 
-
-
     // Creating a new array with the values 2.3, 1.2, 1.5, 10.2, 59.42.
     private static Double[] dataSet = new Double[] {2.3, 1.2, 1.5, 10.2, 59.42};
-
 
 
     // The main function.
     public static void main(String[] args)  {
 
-
-    // Creating a new instance of the class TtoC.
+        // Creating a new instance of the class TtoC.
         TtoC converter = new TtoC();
 
+
         
+
+        System.out.println(args[0]);
+
         // Looping through the array and printing out the converted values.
         for (int i = 0; i < dataSet.length; i++) {
             System.out.println(converter.convert(dataSet[i]));
