@@ -25,7 +25,7 @@ public class Primtall {
         int tall = 28;
         Primtall primtall = new Primtall();
 
-        
+
         if (primtall.prim(tall) == true) {
             System.out.println(tall + " er primtall");
         } else {
@@ -34,10 +34,6 @@ public class Primtall {
             
         }
 
-
-
-        
-        
 
 
     }
