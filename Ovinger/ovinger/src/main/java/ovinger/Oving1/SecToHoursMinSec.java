@@ -2,6 +2,12 @@ package ovinger.Oving1;
 
 public class SecToHoursMinSec {
     
+    /**
+     * It converts seconds to hours, minutes and seconds.
+     * 
+     * @param sec The number of seconds to convert.
+     * @return An array of integers.
+     */
     private int[] convert(int sec) {
         int s = sec;
         int h = s / 3600;
@@ -15,6 +21,7 @@ public class SecToHoursMinSec {
 
 
 
+    // Creating an array of integers.
     private static int[] dataSet = new int[] {3699, 32941, 2312, 12123, 4345};
 
 
@@ -23,6 +30,7 @@ public class SecToHoursMinSec {
 
     
         
+        // It creates a new instance of the class SecToHoursMinSec.
         SecToHoursMinSec converter = new SecToHoursMinSec();
 
 
