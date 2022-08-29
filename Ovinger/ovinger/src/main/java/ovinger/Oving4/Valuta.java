@@ -1,3 +1,6 @@
+/**
+ * It represents a currency, and can convert between that currency and Norwegian kroner
+ */
 package ovinger.Oving4;
 
 public class Valuta {

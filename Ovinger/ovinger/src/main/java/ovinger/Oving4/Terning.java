@@ -1,3 +1,6 @@
+/**
+ * It's a class that simulates a dice game between two players
+ */
 package ovinger.Oving4;
 import java.util.Random;
 
@@ -10,7 +13,7 @@ public class Terning {
     private int sum;
 
     Terning() {
-
+        this.sum = 0;
     }
 
     Terning(String name) {
@@ -33,39 +36,43 @@ public class Terning {
     }
 
     private boolean erFerdig() {
-        //System.out.println("sasdsd");
-        if (this.sum >= 100) {
-            return true;
-        } else {
-            return false;
-        }
+
+        return this.sum >= 100;
+        
     }
 
+/**
+ * If the random number is not 1, add it to the sum, otherwise set the sum to 0.
+ */
     private void kastTerning() {
+        // It creates a new object of the class Random.
         Random random = new Random();
         int n = random.nextInt(1,6);
-        if (n != 1) {
-            this.sum += n;
-        } else {
+        if (n == 1) {
             this.sum = 0;
+
+        } else {
+            this.sum += n;
         }
-        //System.out.println(n);
     }
 
     public static void main(String[] args) {
 
         
-        Terning P1 = new Terning("magnus");
+        // It creates two new objects of the class Terning, and sets the name of the player.
+        Terning P1 = new Terning("Magnus");
         Terning P2 = new Terning("Lars");
 
         int i = 0;
+
+        // It's a do while loop that runs until one of the players has a sum of 100 or more.
         do {
-            i+= 1;
+            i++;
             P1.kastTerning();
             P2.kastTerning();
             
             
-        } while (P1.erFerdig() == false || P2.erFerdig() == false);
+        } while (!P1.erFerdig() && !P2.erFerdig());
 
 
         System.out.println(i + " antall iterasjoner");
