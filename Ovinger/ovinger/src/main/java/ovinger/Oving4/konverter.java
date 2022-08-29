@@ -1,3 +1,4 @@
+
 package ovinger.Oving4;
 
 
@@ -7,11 +8,16 @@ import java.util.Scanner;  // Import the Scanner class
 public class konverter {
     
 
+    // Creating new objects of the class Valuta.
     Valuta dollar = new Valuta(9.70);
     Valuta euro = new Valuta(9.76);
     Valuta sek = new Valuta(0.92);
 
 
+    /**
+     * The function takes an input from the user, and then converts the input to the currency the user
+     * wants
+     */
     public void valg(){
 
 
@@ -78,13 +84,16 @@ public class konverter {
 
 
 
+    /**
+     * The main function is the starting point of the program
+     */
     public static void main(String[] args) {
 
+        // It creates a new object of the class konverter.
         konverter start = new konverter();
 
         start.valg();
 
-        //System.out.println(dollar.toNOK(200));
 
         
 

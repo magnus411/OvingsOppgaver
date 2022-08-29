@@ -1,8 +1,12 @@
+
 package ovinger.Oving3;
 
 import java.util.Scanner;  // Import the Scanner class
 
-
+/**
+ * It takes two integers from the user, and then prints out the multiplication table for all integers
+ * between the two integers
+ */
 public class Lokke {
     
 
@@ -10,6 +14,7 @@ public class Lokke {
     private void loop(int[] mellom) {
 
         int b = 0;
+        // Printing out the multiplication table for all integers between the two integers
         do {
             System.out.println("-----Starttall-----");
             do {
@@ -34,6 +39,9 @@ public class Lokke {
     static public void main(String[] args) {
 
 
+        // It takes two integers from the user, and then prints out the multiplication table for all
+        // integers
+        //  * between the two integers
         Scanner scan = new Scanner(System.in);  
         System.out.println("Skriv inn et tall");
         int mellomA = scan.nextInt();

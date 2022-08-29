@@ -1,5 +1,8 @@
 package ovinger.Oving2;
 
+/**
+ * A class that represents a meatball.
+ */
 public class Kjottdeig {
     
 
@@ -8,6 +11,9 @@ public class Kjottdeig {
 
 
 
+    /**
+     * The function takes two numbers as input, and returns the smaller of the two
+     */
     public static void main(String[] args)  {
 
         Double A = 35.90/450;

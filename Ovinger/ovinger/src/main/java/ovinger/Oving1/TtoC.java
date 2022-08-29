@@ -16,7 +16,7 @@ class TtoC {
         //Defining that Inches is a dobule with value 2.54
         Double tomme = 2.54;
         //Definding that cm to inces is cm / inces
-        Double ctt = centi / tomme;
+        Double ctt = centi * tomme;
 
         //Returning the converted value
         return ctt;
