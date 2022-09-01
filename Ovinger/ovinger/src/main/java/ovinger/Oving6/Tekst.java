@@ -47,37 +47,40 @@ public class Tekst {
     }
 
     public void getAntallTegn() {
-
         for (int i = 0; i < antallTegn.length; i++) {
             System.out.println("----");
             System.out.println(antallTegn[i]);
+
+    
         }
+        //return antallTegn;
 
     }
 
-    public void GetTotalTegn() {
-        System.out.println(tekst.length());
+    public int GetTotalTegn() {
+        //System.out.println(tekst.length());
+        return tekst.length();
     }
 
-    public void getForsjelligeBokstaver() {
+    public int getForsjelligeBokstaver() {
         
-        System.out.println("Unike Bokstaver");
-        System.out.println(unikeBokstaver);
+        //System.out.println("Unike Bokstaver");
+        return unikeBokstaver;
 
     }
 
-    public void prosent(){
+    public double prosent(){
 
         double x = antallTegn[29];
         double y = tekst.length();
 
         double z = x/y*100;
 
-        System.out.println("Prosent: " + z);
+        return z;
 
     }
 
-    public void oftest() {
+    public char oftest() {
         int b = 0;
         for (int i = 0; i < antallTegn.length; i++) {
             int c = antallTegn[i];
@@ -85,14 +88,14 @@ public class Tekst {
                 b = i;
             }
         }
-        System.out.println(tekst.charAt(b));
+        return tekst.charAt(b);
     }
 
 
-    public void antallGanger(String e){
+    public int antallGanger(String e){
 
         int index=alf.indexOf(e);
-        System.out.println(antallTegn[index]);
+        return antallTegn[index];
 
 
     }
