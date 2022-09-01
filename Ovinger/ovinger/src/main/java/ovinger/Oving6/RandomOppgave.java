@@ -7,6 +7,10 @@ public class RandomOppgave {
 
     java.util.Random random = new java.util.Random();
 
+    /**
+     * It generates 10000 random numbers between 0 and 9, and then counts how many times each number
+     * appears
+     */
     public void gen(){
 
         int[] antall = new int[10];
@@ -26,6 +30,7 @@ public class RandomOppgave {
 
     public static void main(String[] args) {
     
+        // It creates a new object of the class RandomOppgave.
         RandomOppgave kjør = new RandomOppgave();
 
         kjør.gen();

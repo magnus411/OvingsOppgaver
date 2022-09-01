@@ -2,12 +2,12 @@ package ovinger.Oving5;
 
 public class Regning {
     
-    private int teller;
-    private int nevner;
+    private double teller;
+    private double nevner;
     private String resultat;
 
 
-    Regning(int teller, int nevner) throws IllegalArgumentException {
+    Regning(double teller, double nevner) throws IllegalArgumentException {
         if (nevner < 0) {
             throw new IllegalArgumentException("Invalid teller or nevner");
         }
@@ -24,40 +24,41 @@ public class Regning {
 
     }
     
-    public int getNevner() {
+    public double getNevner() {
         return nevner;
     }
 
-    public int getTeller() {
+    public double getTeller() {
         return teller;
         }
 
 
 
 
-    public void sum(int t, int n) {
+    public void sum(double t, double n) {
         
         
-        int newTeller = (teller * n + t * nevner);
-        int newNevner =  (nevner * n);
+        double newTeller = (teller * n + t * nevner);
+        double newNevner =  (nevner * n);
 
 
         resultat = (newTeller +  "/"  + newNevner);
     }
 
-    public void sub(int t, int n) {
+    public void sub(double t, double n) {
 
-        int newTeller = (teller * n - t * nevner);
-        int newNevner =  (nevner * n);
+        double newTeller = (teller * n - t * nevner);
+        double newNevner =  (nevner * n);
 
         resultat = (newTeller +  "/"  + newNevner);
 
 
     }
 
-    public void mul(int t, int n) {
-        int newTeller = (teller * t / nevner * n);
-        int newNevner =  (nevner * n);
+
+    public void mul(double t, double n) {
+        double newTeller = (teller * t / nevner * n);
+        double newNevner =  (nevner * n);
 
         resultat = (newTeller +  "/"  + newNevner);
 
@@ -65,10 +66,10 @@ public class Regning {
 
     }
 
-    public void div(int t, int n) {
+    public void div(double t, double n) {
 
-        int newTeller = (teller * n);
-        int newNevner =  (nevner * t);
+        double newTeller = (teller * n);
+        double newNevner =  (nevner * t);
 
         resultat = (newTeller +  "/"  + newNevner);
 
@@ -81,11 +82,11 @@ public class Regning {
 
     public static void main(String[] args) {
 
-        Regning val = new Regning(1,4);
-        Regning val2 = new Regning(1,4);
+        Regning val = new Regning(1.0,4.0);
+        Regning val2 = new Regning(1.0,4.0);
 
 
-        val.sum(val2.getTeller(), val.getNevner());
+        val.div(val2.getTeller(), val.getNevner());
 
         System.out.println(val.getResultat());
     }
