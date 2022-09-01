@@ -2,46 +2,91 @@ package ovinger.Oving5;
 
 public class Regning {
     
-    private double teller;
-    private double nevner;
-    private double resultat;
+    private int teller;
+    private int nevner;
+    private String resultat;
 
 
-
-    Regning(double teller, double nevner) {
+    Regning(int teller, int nevner) throws IllegalArgumentException {
+        if (nevner < 0) {
+            throw new IllegalArgumentException("Invalid teller or nevner");
+        }
         this.teller = teller;
         this.nevner = nevner;
-        this.resultat = 0;
+        this.resultat = "";
     }
 
-
-
     
-    public double getNevner() {
+
+
+    public String getResultat(){
+        return resultat;
+
+    }
+    
+    public int getNevner() {
         return nevner;
     }
 
-    public double getTeller() {
+    public int getTeller() {
         return teller;
         }
 
 
-    public double sum(double t, double n) {
-        //Finner felles Nevner
-        double 
+
+
+    public void sum(int t, int n) {
         
+        
+        int newTeller = (teller * n + t * nevner);
+        int newNevner =  (nevner * n);
 
 
-        return teller + nevner;
+        resultat = (newTeller +  "/"  + newNevner);
     }
+
+    public void sub(int t, int n) {
+
+        int newTeller = (teller * n - t * nevner);
+        int newNevner =  (nevner * n);
+
+        resultat = (newTeller +  "/"  + newNevner);
+
+
+    }
+
+    public void mul(int t, int n) {
+        int newTeller = (teller * t / nevner * n);
+        int newNevner =  (nevner * n);
+
+        resultat = (newTeller +  "/"  + newNevner);
+
+
+
+    }
+
+    public void div(int t, int n) {
+
+        int newTeller = (teller * n);
+        int newNevner =  (nevner * t);
+
+        resultat = (newTeller +  "/"  + newNevner);
+
+        
+    }
+
+
+
 
 
     public static void main(String[] args) {
 
-        Regning val = new Regning(2.0,2.0);
+        Regning val = new Regning(1,4);
+        Regning val2 = new Regning(1,4);
 
-        val.sum(2.0, 2.0);
-        //System.out.println(val.getNevner());
 
+        val.sum(val2.getTeller(), val.getNevner());
+
+        System.out.println(val.getResultat());
     }
 }
