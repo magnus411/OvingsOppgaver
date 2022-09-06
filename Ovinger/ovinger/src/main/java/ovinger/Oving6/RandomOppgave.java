@@ -1,26 +1,25 @@
 package ovinger.Oving6;
 
+import java.util.Random;
 
-import java.lang.ProcessHandle.Info;
-import java.util.random.*;
 public class RandomOppgave {
 
-    java.util.Random random = new java.util.Random();
+    Random random = new Random();
 
     /**
-     * It generates 10000 random numbers between 0 and 9, and then counts how many times each number
+     * It generates 10000 random numbers between 0 and 9, and then counts how many
+     * times each number
      * appears
      */
-    public void gen(){
+    public void gen() {
 
         int[] antall = new int[10];
 
         for (int i = 0; i < 10000; i++) {
             int tall = random.nextInt(10);
 
-            antall[tall] = antall[tall] +1;
+            antall[tall] = antall[tall] + 1;
         }
-
 
         for (int i = 0; i < antall.length; i++) {
             System.out.println("antal ganger " + i);
@@ -29,12 +28,11 @@ public class RandomOppgave {
     }
 
     public static void main(String[] args) {
-    
+
         // It creates a new object of the class RandomOppgave.
         RandomOppgave kjør = new RandomOppgave();
 
         kjør.gen();
-
 
     }
 }
