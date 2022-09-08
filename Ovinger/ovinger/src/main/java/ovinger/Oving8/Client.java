@@ -41,6 +41,7 @@ public class Client {
         int fodselsaar = input12.nextInt();
 
         Person per = new Person(fornavn, etternavn, fodselsaar);
+        System.out.println("");
 
         System.out.println("Ok. Skriv så inn følgene info i denne rekkefølgen. Trykk enter for hver linje.");
         System.out.println("Arbeidsnummer");
@@ -58,45 +59,44 @@ public class Client {
         int skatteprosent = input6.nextInt();
 
         ArbTaker taker1 = new ArbTaker(per, arbeidstakernr, ansettelsesår, maanedslønn, skatteprosent);
+        System.out.println("");
 
         System.out.println("Perfekt!!! Godt å se deg " + taker1.getNavn() + "!!!");
 
         // While exit == 1
         int sjekk = 1;
         do {
-
+            System.out.println("");
             System.out.println("Nå, hva vil du gjøre? Du får følgene valg");
-            System.out.println("1: Endre info");
-            System.out.println("2: Se Skattetrekk per måned");
-            System.out.println("3: Se Skattetrekk per år");
-            System.out.println("4: Se Alder");
-            System.out.println("5: Se Antall år i bedriften");
-            System.out.println("6: Sjekk om du har vært ansatt i x antall år");
-            System.out.println("7: Se all info om deg selv");
-            System.out.println("8: Exit");
+            System.out.println("1: Se Skattetrekk per måned");
+            System.out.println("2: Se Skattetrekk per år");
+            System.out.println("3: Se Alder");
+            System.out.println("4: Se Antall år i bedriften");
+            System.out.println("5: Sjekk om du har vært ansatt i x antall år");
+            System.out.println("6: Se all info om deg selv");
+            System.out.println("7: Exit");
+            System.out.println("");
 
             Scanner input7 = new Scanner(System.in);
             int valg = input7.nextInt();
 
             switch (valg) {
+
                 case 1:
-                    System.out.println("asd");
-                    break;
-                case 2:
                     System.out.println("Du har kr" + taker1.skatteTrekkPerMaaned() + "i skattetrekk per måned");
                     break;
 
-                case 3:
+                case 2:
                     System.out.println("Du trekkes" + taker1.skatteTrekkPerAar() + "Kr i skatt per år");
                     break;
-                case 4:
+                case 3:
                     System.out.println("Du er " + taker1.getAlder() + "år gammel");
                     break;
 
-                case 5:
+                case 4:
                     System.out.println("Du har vært ansatt i " + taker1.getAntallAar() + "år");
                     break;
-                case 6:
+                case 5:
                     System.out.println("Hvor mange år tror du at du har vært ansatt?");
                     Scanner input8 = new Scanner(System.in);
                     int antallAar = input8.nextInt();
@@ -106,7 +106,7 @@ public class Client {
                         System.out.println("Du har ikke vært ansatt i " + antallAar + "år");
                     }
                     break;
-                case 7:
+                case 6:
                     System.out.println("Her er masse info om deg selv");
                     System.out.println("Navn: " + taker1.getNavn());
                     System.out.println("Alder: " + taker1.getAlder());
@@ -118,7 +118,7 @@ public class Client {
                     System.out.println("Skatteprosent: " + taker1.getSkatteprosent() + "%");
                     System.out.println("Fødselsår: " + taker1.getFodselsaar());
                     break;
-                case 8:
+                case 7:
                     System.out.println("Lukker programmet");
                     System.exit(0);
 
