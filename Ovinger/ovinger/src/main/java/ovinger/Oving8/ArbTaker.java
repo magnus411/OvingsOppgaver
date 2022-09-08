@@ -90,24 +90,20 @@ public class ArbTaker {
         return aar - ansettelsesår;
     }
 
-    /*
-     * METODER FOR OPERASJONER
-     */
-
-    public double skatteTrekkPerMaaned() {
+    public double getSkatteTrekkPerMaaned() {
         return (maanedslønn * skatteprosent) / 100;
     }
 
-    public double bruttoLønnPerAar() {
+    public double getBruttoLønnPerAar() {
         return maanedslønn * 12;
     }
 
-    public double skatteTrekkPerAar() {
-        return skatteTrekkPerMaaned() * 11.5;
+    public double getSkatteTrekkPerAar() {
+        return getSkatteTrekkPerMaaned() * 11.5;
     }
 
-    public double nettoLønnPerAar() {
-        return bruttoLønnPerAar() - skatteTrekkPerAar();
+    public double getNettoLønnPerAar() {
+        return getBruttoLønnPerAar() - getSkatteTrekkPerAar();
     }
 
     public boolean ansattMerEnn(int antallAar) {

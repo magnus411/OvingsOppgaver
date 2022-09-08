@@ -1,3 +1,8 @@
+/**
+ * It's a program that asks for your name, age, salary, and tax rate, and then gives you the option to
+ * print out your tax rate per month, per year, your age, how many years you've worked at the company,
+ * and whether you've worked at the company for a certain number of years
+ */
 package ovinger.Oving8;
 
 import java.util.ArrayList;
@@ -27,7 +32,7 @@ public class Client {
 
         // System.out.println(taker.getPerson().eNavn);
         System.out.println(
-                "Hei på dei! I dette systemet får du muligheten til å finne informasjon om dine arbeidsforhold.");
+                "Hei på dei! 2I dette systemet får du muligheten til å finne informasjon om dine arbeidsforhold.");
         System.out.println("La oss starte med å legge inn litt info. Hva er ditt fornavn og etternavn?");
 
         System.out.println("Fornavn: ");
@@ -83,11 +88,11 @@ public class Client {
             switch (valg) {
 
                 case 1:
-                    System.out.println("Du har kr" + taker1.skatteTrekkPerMaaned() + "i skattetrekk per måned");
+                    System.out.println("Du har kr" + taker1.getSkatteTrekkPerMaaned() + "i skattetrekk per måned");
                     break;
 
                 case 2:
-                    System.out.println("Du trekkes" + taker1.skatteTrekkPerAar() + "Kr i skatt per år");
+                    System.out.println("Du trekkes" + taker1.getSkatteTrekkPerAar() + "Kr i skatt per år");
                     break;
                 case 3:
                     System.out.println("Du er " + taker1.getAlder() + "år gammel");
