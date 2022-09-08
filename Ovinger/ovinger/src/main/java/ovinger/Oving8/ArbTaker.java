@@ -54,6 +54,14 @@ public class ArbTaker {
      * 
      * @return ansettelsesår
      */
+    public void setMaanedsLønn(int newLonn) {
+        this.maanedslønn = newLonn;
+    }
+
+    public void setSkatteprosent(double skatteprosent) {
+        this.skatteprosent = skatteprosent;
+    }
+
     public int getAnsettelsesår() {
         return ansettelsesår;
     }
@@ -107,11 +115,8 @@ public class ArbTaker {
     }
 
     public boolean ansattMerEnn(int antallAar) {
-        if (getAntallAar() > antallAar) {
-            return true;
-        } else {
-            return false;
-        }
+        return getAntallAar() > antallAar;
+
     }
 
 }

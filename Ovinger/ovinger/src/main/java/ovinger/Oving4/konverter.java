@@ -1,30 +1,25 @@
 
 package ovinger.Oving4;
 
-
-import java.util.Scanner;  // Import the Scanner class
-
+import java.util.Scanner; // Import the Scanner class
 
 public class konverter {
-    
 
     // Creating new objects of the class Valuta.
     Valuta dollar = new Valuta(9.70);
     Valuta euro = new Valuta(9.76);
     Valuta sek = new Valuta(0.92);
 
-
     /**
-     * The function takes an input from the user, and then converts the input to the currency the user
+     * The function takes an input from the user, and then converts the input to the
+     * currency the user
      * wants
      */
-    public void valg(){
-
+    public void valg() {
 
         String valg = "hei";
 
-
-        Scanner scan = new Scanner(System.in);  
+        Scanner scan = new Scanner(System.in);
         System.out.println("Hvilken valuta vil du konvertere fra / til?");
 
         System.out.println("1: dollar");
@@ -36,7 +31,7 @@ public class konverter {
         System.out.println("Hvor mye penger ønsker de å konvertere?");
         int cash = scan.nextInt();
 
-        //close();
+        // close();
 
         if (input == 1) {
             System.out.println(cash + " dollar er:");
@@ -58,7 +53,6 @@ public class konverter {
             System.out.println(sek.fromNOK(cash));
             System.out.println("Euro");
 
-
         } else if (input == 3) {
             System.out.println(cash + " Svenske Kroner er:");
             System.out.println(sek.toNOK(cash));
@@ -69,20 +63,14 @@ public class konverter {
             System.out.println(sek.fromNOK(cash));
             System.out.println("Norske Kroner");
 
-
-
         } else if (input == 4) {
 
             System.exit(0);
         } else {
             System.out.println("Feil input!");
         }
-        
 
     }
-
-
-
 
     /**
      * The main function is the starting point of the program
@@ -94,9 +82,5 @@ public class konverter {
 
         start.valg();
 
-
-        
-
-
-        }
+    }
 }
