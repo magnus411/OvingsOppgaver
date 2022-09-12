@@ -1,6 +1,7 @@
 package ovinger.Oving9;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class Oppgaveoversikt {
 
@@ -11,8 +12,8 @@ public class Oppgaveoversikt {
     public Oppgaveoversikt() {
         students = new ArrayList<Student>();
 
-        Student s1 = new Student("Ben", 1);
-        Student s2 = new Student("Ben", 1);
+        Student s1 = new Student("Are", 2);
+        Student s2 = new Student("Tom", 1);
         Student s3 = new Student("Ben", 1);
 
         students.add(s1);
@@ -32,8 +33,8 @@ public class Oppgaveoversikt {
     public void update(String navn, int antOppg) {
 
         Student newStudent = new Student(navn, antOppg);
-        setStudenter(newStudent);
-        students.add(getStudenter());
+        students.add(newStudent);
+        antStud++;
 
     }
 
@@ -49,18 +50,15 @@ public class Oppgaveoversikt {
         return students.stream().filter(e -> e.getNavn().equals(navn)).mapToInt(e -> e.getAntOppg()).sum();
     }
 
-    public static void main(String[] args) {
+    public Student getStudent(String navn) {
 
-        Oppgaveoversikt oversikt = new Oppgaveoversikt();
+        for (int i = 0; i < students.size(); i++) {
+            if (students.get(i).getNavn().equals(navn)) {
+                return students.get(i);
+            }
+        }
+        return null;
 
-        oversikt.update("Are", 2);
-        oversikt.update("Ben", 2);
-        oversikt.update("Jon", 2);
-
-        // System.out.println(oversikt.students.get(0));
-
-        oversikt.endreAntallOppgaver("Are", 4);
-        System.out.println(oversikt.finnAntallOppgaver("Are"));
-        // System.out.println(oversikt.students.get(0));
     }
+
 }

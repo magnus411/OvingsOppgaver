@@ -2,13 +2,13 @@
  * It's a class that simulates a dice game between two players
  */
 package ovinger.Oving4;
+
 import java.util.Random;
 
 import javax.swing.text.StyledEditorKit.BoldAction;
 
 public class Terning {
-    
-    
+
     private String player;
     private int sum;
 
@@ -20,8 +20,6 @@ public class Terning {
         this.player = name;
         this.sum = 0;
     }
-    
-    
 
     public String getPlayer() {
         return player;
@@ -38,16 +36,16 @@ public class Terning {
     private boolean erFerdig() {
 
         return this.sum >= 100;
-        
+
     }
 
-/**
- * If the random number is not 1, add it to the sum, otherwise set the sum to 0.
- */
+    /**
+     * If the random number is not 1, add it to the sum, otherwise set the sum to 0.
+     */
     private void kastTerning() {
         // It creates a new object of the class Random.
         Random random = new Random();
-        int n = random.nextInt(1,6);
+        int n = random.nextInt(6);
         if (n == 1) {
             this.sum = 0;
 
@@ -58,29 +56,26 @@ public class Terning {
 
     public static void main(String[] args) {
 
-        
-        // It creates two new objects of the class Terning, and sets the name of the player.
+        // It creates two new objects of the class Terning, and sets the name of the
+        // player.
         Terning P1 = new Terning("Magnus");
         Terning P2 = new Terning("Lars");
 
         int i = 0;
 
-        // It's a do while loop that runs until one of the players has a sum of 100 or more.
+        // It's a do while loop that runs until one of the players has a sum of 100 or
+        // more.
         do {
             i++;
             P1.kastTerning();
             P2.kastTerning();
-            
-            
-        } while (!P1.erFerdig() && !P2.erFerdig());
 
+        } while (!P1.erFerdig() && !P2.erFerdig());
 
         System.out.println(i + " antall iterasjoner");
 
         System.out.println(P1.getPlayer() + " sin sum " + P1.getSum());
         System.out.println(P2.getPlayer() + " sin sum " + P2.getSum());
-
-
 
     }
 }
