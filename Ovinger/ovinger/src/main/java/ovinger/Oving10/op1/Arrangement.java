@@ -24,11 +24,11 @@ public class Arrangement {
 
     }
 
-    public Arrangement(int nummer, String navn, String sted, String tidspunkt, String arrangør) {
+    public Arrangement(int nummer, String navn, String sted, Type type, String tidspunkt, String arrangør) {
         this.nummer = nummer;
         this.navn = navn;
         this.sted = sted;
-        // this.type = type;
+        this.type = type;
         this.tidspunkt = tidspunkt;
 
         this.dato = tidspunkt.substring(0, 8);
