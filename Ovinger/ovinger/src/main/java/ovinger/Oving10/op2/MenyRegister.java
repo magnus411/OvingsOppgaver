@@ -15,7 +15,7 @@ import ovinger.Oving10.op2.Rett.Type;
 
 public class MenyRegister {
 
-    public ArrayList<Meny> meny;
+    private ArrayList<Meny> meny;
 
     public MenyRegister() {
 

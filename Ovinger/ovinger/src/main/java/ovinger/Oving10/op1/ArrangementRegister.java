@@ -69,11 +69,18 @@ public class ArrangementRegister {
      * Den bruker {@link Arrangement#getDato()} for å sortere arrangementene basert
      * på datoen
      */
-    public void finnArrangement() {
+    public ArrayList<Arrangement> finnArrangement() {
+
+        ArrayList<Arrangement> tempArr = new ArrayList<Arrangement>();
 
         Arr.sort((e1, e2) -> e1.getDato().compareTo(e2.getDato()));
-        Arr.forEach(e -> System.out.println(e));
+        Arr.forEach(e -> {
+            Arrangement temp = new Arrangement(e.getNummer(), e.getNavn(), e.getSted(), e.getType(), e.getTidspunkt(),
+                    e.getArrangør());
+            tempArr.add(temp);
 
+        });
+        return tempArr;
     }
 
     /**

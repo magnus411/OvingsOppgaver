@@ -1,6 +1,12 @@
 
 package ovinger.Oving10.op1;
 
+/**
+ * 
+ * 881 LINJER MED KODE BBY!!!!!!!!
+ * 2482 antall ord!!!!
+ */
+
 import java.util.ArrayList;
 
 /**
