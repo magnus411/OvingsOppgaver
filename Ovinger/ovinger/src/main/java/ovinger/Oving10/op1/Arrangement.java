@@ -36,8 +36,8 @@ public class Arrangement {
 
     }
 
-    public Arrangement(Arrangement arrangement){
-        this(arrangement.getArrangør(), )
+    public Arrangement(Arrangement arrangement) {
+        arrangement.getArrangør();
     }
 
     public int getNummer() {

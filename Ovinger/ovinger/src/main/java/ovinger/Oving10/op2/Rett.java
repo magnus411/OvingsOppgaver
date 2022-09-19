@@ -12,9 +12,9 @@ public class Rett {
     String ingredienser;
 
     enum Type {
-        FROKOST,
-        MIDDAG,
-        KVELDSMAT,
+        FORRETT,
+        HOVEDRETT,
+        DESSERT,
     }
 
     Type type;
@@ -29,6 +29,16 @@ public class Rett {
         this.beskrivelse = beskrivelse;
         this.ingredienser = ingredienser;
         this.pris = pris;
+    }
+
+    public String toString() {
+        return "Rett{" +
+                "type=" + type +
+                ", navn='" + navn + '\'' +
+                ", beskrivelse='" + beskrivelse + '\'' +
+                ", ingredienser='" + ingredienser + '\'' +
+                ", pris=" + pris +
+                '}';
     }
 
 }

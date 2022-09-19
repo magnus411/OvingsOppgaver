@@ -1,10 +1,16 @@
 package ovinger.Oving10.op1;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import ovinger.Oving10.op1.Arrangement.Type;
 
+/**
+ * @author Magnus Gjerstad
+ * @version 0.1
+ * 
+ */
 public class ArrangementRegister {
 
     public ArrayList<Arrangement> Arr;
@@ -25,6 +31,17 @@ public class ArrangementRegister {
 
     }
 
+    /**
+     * Denne metoden lager et nytt arrangement og legger det til i
+     * ArrangementRegister.
+     * 
+     * @param nummer    nummeret til arrangementet
+     * @param navn      navnet til arrangementet
+     * @param sted      stedet til arrangementet
+     * @param type
+     * @param tidspunkt
+     * @param arrangør
+     */
     public void addArrangement(int nummer, String navn, String sted, String type, String tidspunkt, String arrangør) {
         Arrangement arrangement = new Arrangement(nummer, navn, sted, Type.valueOf(type), tidspunkt, arrangør);
         Arr.add(arrangement);
@@ -45,6 +62,11 @@ public class ArrangementRegister {
 
     }
 
+    /**
+     * Denne metoden bruker {@link Arrangement#getArrangør()} for å finne arrangør
+     * 
+     * @param arrangør
+     */
     public void finnArrangementArrangør(String arrangør) {
         Arr.stream().filter(e -> e.getArrangør().equals(arrangør)).forEach(e -> System.out.println(e));
     }
@@ -67,7 +89,7 @@ public class ArrangementRegister {
 
     public void finnArrangementMellom(String dato1, String dato2) {
 
-        ArrayList<Arrangement> sorter = new ArrayList<Arrangement>();
+        List<Arrangement> sorter = new ArrayList<Arrangement>();
 
         Arr.stream().filter(e -> e.getDato().compareTo(dato1) >= 0 && e.getDato().compareTo(dato2) <= 0)
                 .forEach(e -> sorter.add(e));
@@ -76,9 +98,4 @@ public class ArrangementRegister {
         sorter.forEach(e -> System.out.println(e));
     }
 
-    public static void main(String[] args) {
-        ArrangementRegister ar = new ArrangementRegister();
-        // ar.finnArrangement();
-        ar.finnArrangementMellom("20211014", "20211015");
-    }
 }

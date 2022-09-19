@@ -13,11 +13,11 @@ public class MenyRegister {
 
         this.meny = new ArrayList<Meny>();
 
-        Rett r1 = new Rett(Type.MIDDAG, "Kylling", "Kyllingfilet", "Kyllingfilet med potetmos og salat", 100);
-        Meny m1 = new Meny("Meny1", r1);
+        Rett Kylling = new Rett(Type.HOVEDRETT, "Kylling", "Kyllingfilet", "Kyllingfilet med potetmos og salat", 100);
+        Meny m1 = new Meny("Meny1", Kylling);
 
-        Rett r3 = new Rett(Type.MIDDAG, "ASDSD", "dsd", "Kyllingfilet med potetmos og salat", 100);
-        Meny m2 = new Meny("Meny2", r3);
+        Rett Iskrem = new Rett(Type.DESSERT, "Iskrem", "God iskrem", "Iskrem med is", 100);
+        Meny m2 = new Meny("Meny2", Iskrem);
 
         meny.add(m1);
         meny.add(m2);
@@ -26,6 +26,14 @@ public class MenyRegister {
     public void lagNyMeny(String navn, Rett rett) {
         Meny m = new Meny(navn, rett);
         this.meny.add(m);
+    }
+
+    public void finnAlleRetter() {
+        meny.stream().forEach((e) -> {
+            e.rett.stream().forEach((f) -> {
+                System.out.println(f.type + " " + f.navn + " " + f.beskrivelse + " " + f.ingredienser + " " + f.pris);
+            });
+        });
     }
 
     public void leggTilRettIMeny(String menyNavn, Rett rett) {
@@ -42,7 +50,7 @@ public class MenyRegister {
     }
 
     public void skrivUtMeny() {
-        System.out.println("Meny:");
+        System.out.println("Menyer :");
 
         meny.stream().forEach((e) -> {
             System.out.println("");
@@ -51,6 +59,7 @@ public class MenyRegister {
             e.rett.stream().forEach((f) -> {
 
                 // Bruk en get to string etterepå!!!!!!!!
+
                 System.out.println(f.type + " " + f.navn + " " + f.beskrivelse + " " + f.ingredienser + " " + f.pris);
 
             });
@@ -62,6 +71,7 @@ public class MenyRegister {
         meny.stream().forEach((e) -> {
             e.rett.stream().filter((f) -> f.navn.equals(navn)).forEach((f) -> {
                 System.out.println(f.type + " " + f.navn + " " + f.beskrivelse + " " + f.ingredienser + " " + f.pris);
+
             });
         });
     }
@@ -79,30 +89,38 @@ public class MenyRegister {
 
         meny.stream().forEach((e) -> {
             if (e.rett.stream().mapToInt((f) -> f.pris).sum() <= interval) {
-                System.out.println(e.navn + " " + e.rett.stream().mapToInt((f) -> f.pris).sum());
+                System.out.println(e.navn + " pris: " + e.rett.stream().mapToInt((f) -> f.pris).sum());
             }
         });
     }
 
-    public static void main(String[] args) {
-        MenyRegister menyRegister = new MenyRegister();
-
-        Rett r2 = new Rett(Type.FROKOST, "Iskrem", "Kyllingfilet", "Kyllingfilet med potetmos og salat", 100);
-        Rett r7 = new Rett(Type.FROKOST, "fffffff", "dsd", "Kyllingfilet med potetmos og salat", 100);
-
-        menyRegister.leggTilRettIMeny("Meny1", r7);
-        menyRegister.leggTilRettIMeny("Meny1", r7);
-
-        menyRegister.lagNyMeny("Meny3", r2);
-
-        menyRegister.leggTilRettIMeny("Meny3", r2);
-
-        // menyRegister.skrivUtMeny();
-
-        // menyRegister.finnRettGittNavn("fffffff");
-        // menyRegister.finnRettGittType(Type.FROKOST);
-
-        menyRegister.menyTotalPris(200);
-
+    public void listeOverMenyer() {
+        meny.stream().forEach((e) -> {
+            System.out.println(e.navn);
+        });
     }
+
+    // public static void main(String[] args) {
+    // MenyRegister menyRegister = new MenyRegister();
+
+    // Rett r2 = new Rett(Type.FORRETT, "Iskrem", "Kyllingfilet", "Kyllingfilet med
+    // potetmos og salat", 100);
+    // Rett r7 = new Rett(Type.HOVEDRETT, "fffffff", "dsd", "Kyllingfilet med
+    // potetmos og salat", 100);
+
+    // menyRegister.leggTilRettIMeny("Meny1", r7);
+    // menyRegister.leggTilRettIMeny("Meny1", r7);
+
+    // menyRegister.lagNyMeny("Meny3", r2);
+
+    // menyRegister.leggTilRettIMeny("Meny3", r2);
+
+    // // menyRegister.skrivUtMeny();
+
+    // // menyRegister.finnRettGittNavn("fffffff");
+    // // menyRegister.finnRettGittType(Type.FROKOST);
+
+    // menyRegister.menyTotalPris(200);
+
+    // }
 }
