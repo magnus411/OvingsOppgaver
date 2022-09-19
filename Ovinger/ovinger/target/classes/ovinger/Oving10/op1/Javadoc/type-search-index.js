@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"ovinger.Oving10.op1","l":"Arrangement"},{"p":"ovinger.Oving10.op1","l":"ArrangementRegister"},{"p":"ovinger.Oving10.op1","l":"Klient"}];updateSearchResults();

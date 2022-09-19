@@ -12,14 +12,23 @@ public class Person {
         this.fodselsaar = fodselsaar;
     }
 
+    /**
+     * @return String
+     */
     public String getfNavn() {
         return fNavn;
     }
 
+    /**
+     * @return String
+     */
     public String geteNavn() {
         return eNavn;
     }
 
+    /**
+     * @return int
+     */
     public int getFodselsaar() {
         return fodselsaar;
     }

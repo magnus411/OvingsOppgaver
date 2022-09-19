@@ -11,7 +11,8 @@ public class konverter {
     Valuta sek = new Valuta(0.92);
 
     /**
-     * The function takes an input from the user, and then converts the input to the
+     * The function takes∏ an input from the user, and then converts the input to
+     * the
      * currency the user
      * wants
      */

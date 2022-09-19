@@ -27,6 +27,9 @@ public class RandomOppgave {
         }
     }
 
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
 
         // It creates a new object of the class RandomOppgave.

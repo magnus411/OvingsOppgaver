@@ -62,11 +62,17 @@ public class Tekst {
 
     }
 
+    /**
+     * @return int
+     */
     public int GetTotalTegn() {
         // System.out.println(tekst.length());
         return tekst.length();
     }
 
+    /**
+     * @return int
+     */
     public int getForsjelligeBokstaver() {
 
         // System.out.println("Unike Bokstaver");
@@ -74,6 +80,9 @@ public class Tekst {
 
     }
 
+    /**
+     * @return double
+     */
     public double prosent() {
 
         double x = antallTegn[29];
@@ -85,6 +94,9 @@ public class Tekst {
 
     }
 
+    /**
+     * @return char
+     */
     public char oftest() {
         int b = 0;
         for (int i = 0; i < antallTegn.length; i++) {
@@ -96,6 +108,10 @@ public class Tekst {
         return tekst.charAt(b);
     }
 
+    /**
+     * @param e
+     * @return int
+     */
     public int antallGanger(String e) {
 
         int index = alf.indexOf(e);
@@ -103,6 +119,9 @@ public class Tekst {
 
     }
 
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
 
         Tekst tekst = new Tekst();

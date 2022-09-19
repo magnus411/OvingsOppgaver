@@ -3,8 +3,21 @@ package ovinger.Oving10.op1;
 
 import java.util.Scanner;
 
+/**
+ * En klasse for main
+ * 
+ * @author Magnus Gjerstad
+ * @version 0.1
+ * @description En klasse for main
+ */
 public class Klient {
 
+    /**
+     * Main er klientprogrammet som lar brukere legge til arrangement, søke etter
+     * arrangement, etc
+     * 
+     * @param args
+     */
     public static void main(String[] args) {
         ArrangementRegister register = new ArrangementRegister();
 

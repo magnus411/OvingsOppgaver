@@ -6,6 +6,11 @@ package ovinger.Oving6;
 
 public class Matrise {
 
+    /**
+     * @param a
+     * @param b
+     * @return int[][]
+     */
     public int[][] gange(int[][] a, int[][] b) {
 
         try {
@@ -30,6 +35,11 @@ public class Matrise {
         }
     }
 
+    /**
+     * @param a
+     * @param b
+     * @return int[][]
+     */
     public int[][] pluss(int[][] a, int[][] b) {
 
         try {
@@ -52,6 +62,11 @@ public class Matrise {
 
     }
 
+    /**
+     * @param a
+     * @param b
+     * @return int[][]
+     */
     public int[][] transpose(int[][] a, int[][] b) {
 
         try {
@@ -72,6 +87,9 @@ public class Matrise {
 
     }
 
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
 
         int a[][] = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };

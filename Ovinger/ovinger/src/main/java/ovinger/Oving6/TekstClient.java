@@ -2,6 +2,9 @@ package ovinger.Oving6;
 
 public class TekstClient {
 
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
 
         Tekst kjør = new Tekst();
@@ -10,10 +13,8 @@ public class TekstClient {
 
         System.out.println(kjør.GetTotalTegn());
 
-        
-        //System.out.println("Unike Bokstaver")
+        // System.out.println("Unike Bokstaver")
         System.out.println(kjør.getForsjelligeBokstaver());
-
 
         System.out.println(kjør.prosent());
 
@@ -21,12 +22,6 @@ public class TekstClient {
 
         System.out.println(kjør.antallGanger("e"));
 
-
-
-
-
     }
-    
-    
 
 }

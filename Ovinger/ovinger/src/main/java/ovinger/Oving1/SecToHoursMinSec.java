@@ -1,7 +1,7 @@
 package ovinger.Oving1;
 
 public class SecToHoursMinSec {
-    
+
     /**
      * It converts seconds to hours, minutes and seconds.
      * 
@@ -14,31 +14,26 @@ public class SecToHoursMinSec {
         int m = (s % 3600) / 60;
         int ns = (s % 60);
 
-        return new int[] {h, m, ns};
+        return new int[] { h, m, ns };
 
     }
 
-
-
-
     // Creating an array of integers.
-    private static int[] dataSet = new int[] {3699, 32941, 2312, 12123, 4345};
+    private static int[] dataSet = new int[] { 3699, 32941, 2312, 12123, 4345 };
 
-
+    /**
+     * @param args
+     */
     // The main function.
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
 
-    
-        
         // It creates a new instance of the class SecToHoursMinSec.
         SecToHoursMinSec converter = new SecToHoursMinSec();
-
 
         // Looping through the array and printing out the converted values.
         for (int i = 0; i < dataSet.length; i++) {
 
-            int[] num =  converter.convert(dataSet[i]);
-
+            int[] num = converter.convert(dataSet[i]);
 
             System.out.println("Seconds " + dataSet[i]);
             System.out.println("Hours " + num[0]);
@@ -46,15 +41,8 @@ public class SecToHoursMinSec {
             System.out.println("Sec " + num[2]);
             System.out.println("===============");
 
-            
         }
 
-
-        
     }
 
-
-
-
 }
-

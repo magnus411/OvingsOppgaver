@@ -1,3 +1,4 @@
+
 package ovinger.Oving10.op1;
 
 import java.util.ArrayList;
@@ -7,9 +8,13 @@ import java.util.stream.Collectors;
 import ovinger.Oving10.op1.Arrangement.Type;
 
 /**
+ * Hello there general. En klasse for for å registrere arrangement,
+ * endre arrangement og hente arrangement
+ * 
  * @author Magnus Gjerstad
  * @version 0.1
- * 
+ * @description Hello there general. En klasse for for å registrere arrangement,
+ *              endre arrangement og hente arrangement
  */
 public class ArrangementRegister {
 
@@ -38,7 +43,7 @@ public class ArrangementRegister {
      * @param nummer    nummeret til arrangementet
      * @param navn      navnet til arrangementet
      * @param sted      stedet til arrangementet
-     * @param type
+     * @param type      typen til arrangementet
      * @param tidspunkt
      * @param arrangør
      */
@@ -48,14 +53,23 @@ public class ArrangementRegister {
 
     }
 
+    /**
+     * Denne metoden fjerner et arrangement fra ArrangementRegister.
+     * 
+     * @param a er arrangementet som skal fjernes.
+     */
+
     public void removeArrangement(Arrangement a) {
         Arr.remove(a);
     }
 
+    /**
+     * Denne metoden returnerer en liste med alle arrangementer som er lagt til.
+     * 
+     * Den bruker {@link Arrangement#getDato()} for å sortere arrangementene basert
+     * på datoen
+     */
     public void finnArrangement() {
-        // for (int i = 0; i < Arr.size(); i++) {
-        // System.out.println(Arr.get(i));
-        // }
 
         Arr.sort((e1, e2) -> e1.getDato().compareTo(e2.getDato()));
         Arr.forEach(e -> System.out.println(e));
@@ -71,22 +85,52 @@ public class ArrangementRegister {
         Arr.stream().filter(e -> e.getArrangør().equals(arrangør)).forEach(e -> System.out.println(e));
     }
 
+    /**
+     * Denne metoden finner arrangement basert på en vilkålig dato. Metoden brukder
+     * {@link Arrangement#getDato()} for å finne dato
+     * 
+     * @param dato Tar inn en String med format årmåneddag
+     */
     public void finnArrangementDato(String dato) {
         Arr.stream().filter(e -> e.getDato().equals(dato)).forEach(e -> System.out.println(e));
     }
 
+    /**
+     * Denne metoden finner stedet til et arrangement basert på en user input.
+     * Metoden bruker {@link Arrangement#getSted()} for å finne arrangement som
+     * kvalifiserer seg
+     * 
+     * @param sted Steder som skal søkes etter
+     */
     public void finnArrangementSted(String sted) {
         Arr.stream().filter(e -> e.getSted().equals(sted)).forEach(e -> System.out.println(e));
     }
 
+    /**
+     * Denne metoden finner arrangement basert på en vilkålig type. Metoden brukder
+     * {@link Arrangement#getType()} for å finne typen
+     * 
+     * @param type typen til arrangementet
+     */
     public void finnArrangementType(String type) {
         Arr.stream().filter(e -> e.getType().equals(type)).forEach(e -> System.out.println(e));
     }
 
+    /**
+     * Denne metoden returnerer en liste med arrangementer basert på et navn.
+     * 
+     * @param navn navnet til arrangementet
+     */
     public void finnArrangementNavn(String navn) {
         Arr.stream().filter(e -> e.getNavn().equals(navn)).forEach(e -> System.out.println(e));
     }
 
+    /**
+     * Denne metoden returnerer en liste med arrangementer innenfor to datoer.
+     * 
+     * @param dato1 Fra dato
+     * @param dato2 Til dato
+     */
     public void finnArrangementMellom(String dato1, String dato2) {
 
         List<Arrangement> sorter = new ArrayList<Arrangement>();

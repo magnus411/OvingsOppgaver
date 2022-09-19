@@ -4,16 +4,19 @@ import ovinger.Oving10.op2.Rett.Type;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
+/**
+ * Main er et klientprogrammet
+ * 
+ * Se: {@link Rett} og {@link Meny}
+ * 
+ * 
+ * 
+ */
 public class Klient {
 
     public static void main(String[] args) {
 
         MenyRegister menyRegister = new MenyRegister();
-
-        // Rett Iskrem = new Rett(Type.HOVEDRETT, "Iskrem", "Kyllingfilet",
-        // "Kyllingfilet med potetmos og salat", 100);
-        // Rett fffffff = new Rett(Type.DESSERT, "fffffff", "dsd", "Kyllingfilet med
-        // potetmos og salat", 100);
 
         while (true) {
 

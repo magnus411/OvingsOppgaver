@@ -10,17 +10,21 @@ public class Valuta {
     Valuta(double kurs) {
         this.kurs = kurs;
     }
-    
+
+    /**
+     * @param tall
+     * @return double
+     */
     public double toNOK(double tall) {
-        return kurs*tall;
+        return kurs * tall;
     }
 
+    /**
+     * @param tall
+     * @return double
+     */
     public double fromNOK(double tall) {
-        return tall/kurs;
+        return tall / kurs;
     }
-
-    
-    
-
 
 }

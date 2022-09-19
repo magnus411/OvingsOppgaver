@@ -21,18 +21,30 @@ public class Terning {
         this.sum = 0;
     }
 
+    /**
+     * @return String
+     */
     public String getPlayer() {
         return player;
     }
 
+    /**
+     * @return int
+     */
     public int getSum() {
         return sum;
     }
 
+    /**
+     * @param sum
+     */
     public void setSum(int sum) {
         this.sum = sum;
     }
 
+    /**
+     * @return boolean
+     */
     private boolean erFerdig() {
 
         return this.sum >= 100;
@@ -54,6 +66,9 @@ public class Terning {
         }
     }
 
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
 
         // It creates two new objects of the class Terning, and sets the name of the

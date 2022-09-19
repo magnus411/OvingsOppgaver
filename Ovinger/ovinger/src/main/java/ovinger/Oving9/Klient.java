@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class Klient {
 
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
 
         Oppgaveoversikt oversikt = new Oppgaveoversikt();

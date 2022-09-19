@@ -12,6 +12,9 @@ import javax.sql.rowset.spi.SyncResolver;
 
 public class Client {
 
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
 
         ArrayList<ArbTaker> database = new ArrayList<>();
