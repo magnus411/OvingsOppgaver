@@ -16,6 +16,8 @@ import ovinger.Oving10.op1.Arrangement.Type;
  * @description Hello there general. En klasse for for å registrere arrangement,
  *              endre arrangement og hente arrangement
  */
+
+ 
 public class ArrangementRegister {
 
     public ArrayList<Arrangement> Arr;
@@ -59,6 +61,11 @@ public class ArrangementRegister {
      * @param a er arrangementet som skal fjernes.
      */
 
+    /**
+     * Denne metoden fjerner et arrangement fra ArrangementRegister.
+     * @param a Tar inn et arrangement objekt
+     * @return returner ingenting
+     */
     public void removeArrangement(Arrangement a) {
         Arr.remove(a);
     }
