@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
  */
 public class RealEstateRegister {
 
-    private ArrayList<RealEstate> eiendom;
+    private List<RealEstate> eiendom;
 
     /*
      * A constructor for the real estate register
@@ -37,15 +37,6 @@ public class RealEstateRegister {
     }
 
     /*
-     * A method to add a real estate to the arraylist
-     * 
-     * @param eiendom A real estate
-     */
-    public void addRealEstate(RealEstate eiendom) {
-        this.eiendom.add(eiendom);
-    }
-
-    /*
      * A method to get all the real estates in the arraylist as a string
      */
     public ArrayList<String> printRealEstate() {
@@ -63,7 +54,14 @@ public class RealEstateRegister {
 
         RealEstate eiendomEn = new RealEstate(municipalityName, municipalityNumber, lotNumber, sectionNumber, name,
                 area, owner);
+
         this.addRealEstate(eiendomEn);
+    }
+
+    public boolean checkID(String input) {
+
+        return this.eiendom.stream()
+                .anyMatch((e) -> e.getUniqueID.equals(input));
     }
 
     /*
@@ -73,21 +71,23 @@ public class RealEstateRegister {
      * 
      * @param postnummer Municipality Number
      */
-    public void deleteRealEstate(String gateadresse, int postnummer) {
+    public void deleteRealEstate(String getMunicipalityName, int getMunicipalityNumber) {
         this.eiendom.removeIf(
-                (RealEstate e) -> e.getMunicipalityName().equals(gateadresse)
-                        && e.getMunicipalityNumber() == postnummer);
+                (RealEstate e) -> e.getMunicipalityName().equals(getMunicipalityName)
+                        && e.getMunicipalityNumber() == getMunicipalityNumber);
     }
 
     /*
      * A method to get the number of real estates
+     * 
+     * @return The size of Real Estates registerd
      */
     public int getNumberOfRealEstate() {
         return this.eiendom.size();
 
     }
 
-    public ArrayList<String> getRealEstateByMunicipality(String municipalityName, int municipalityNumber) {
+    public List<String> getRealEstateByMunicipality(String municipalityName, int municipalityNumber) {
         return this.eiendom.stream()
                 .filter((e) -> e.getMunicipalityName().equals(municipalityName))
                 .filter((e) -> e.getMunicipalityNumber() == municipalityNumber)
@@ -97,8 +97,10 @@ public class RealEstateRegister {
 
     /*
      * A method to get all the Unique IDs from all of the registerd real estates
+     * 
+     * @return An arraylist of all the Unique IDs
      */
-    public ArrayList<String> getUniqueIDforAll() {
+    public List<String> getUniqueIDforAll() {
         return this.eiendom.stream()
                 .map((e) -> e.getUniqueID())
                 .collect(Collectors.toCollection(ArrayList::new));

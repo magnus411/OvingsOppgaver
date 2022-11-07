@@ -1,28 +1,47 @@
 
 package ovinger.Oving11;
 
+/**
+ * A class to create a real estate
+ * 
+ * @author Magnus Gjerstad
+ * @version 1.0
+ * 
+ */
 public class RealEstate {
 
-    int municipalityNumber;
-    String municipalityName;
-    int lotNumber;
-    int sectionNumber;
-    String name;
-    int area;
-    String owner;
+    private int municipalityNumber;
+    private String municipalityName;
+    private int lotNumber;
+    private int sectionNumber;
+    private String name;
+    private int area;
+    private String owner;
 
-    /**
-     * A class to create a real estate
+    /*
+     * A constructor for the real estate
      * 
-     * @author Magnus Gjerstad
-     * @version 1.0
+     * @param municipalityName The name of the municipality
      * 
+     * @param municipalityNumber The number of the municipality
+     * 
+     * @param lotNumber The lot number
+     * 
+     * @param sectionNumber The section number
+     * 
+     * @param name The name of the real estate
+     * 
+     * @param area The area of the real estate
      */
-
     public RealEstate(String municipalityName, int municipalityNumber, int lotNumber, int sectionNumber, String name,
             int area, String owner) {
         this.municipalityName = municipalityName;
-        this.municipalityNumber = municipalityNumber;
+
+        if (this.municipalityNumber >= 101 && this.municipalityNumber <= 5054) {
+            this.municipalityNumber = municipalityNumber;
+        } else {
+            throw new IllegalArgumentException("Municipality number must be between 101 and 5054");
+        }
 
         this.lotNumber = lotNumber;
         this.sectionNumber = sectionNumber;
@@ -36,7 +55,7 @@ public class RealEstate {
      * A getter for the municipality number
      */
     public int getMunicipalityNumber() {
-        return municipalityNumber;
+        return this.municipalityNumber;
     }
 
     /*
@@ -50,7 +69,7 @@ public class RealEstate {
      * A getter for the municipality name
      */
     public String getMunicipalityName() {
-        return municipalityName;
+        return this.municipalityName;
     }
 
     /*
@@ -64,7 +83,7 @@ public class RealEstate {
      * A getter for the lot number
      */
     public int getLotNumber() {
-        return lotNumber;
+        return this.lotNumber;
     }
 
     /*
@@ -78,7 +97,7 @@ public class RealEstate {
      * A getter for the section number
      */
     public int getSectionNumber() {
-        return sectionNumber;
+        return this.sectionNumber;
     }
 
     /*
@@ -92,7 +111,7 @@ public class RealEstate {
      * A getter for the name
      */
     public String getName() {
-        return name;
+        return this.name;
     }
 
     /*
@@ -106,7 +125,7 @@ public class RealEstate {
      * A getter for the area
      */
     public int getArea() {
-        return area;
+        return this.area;
     }
 
     /*
@@ -120,7 +139,7 @@ public class RealEstate {
      * A getter for the owner
      */
     public String getOwner() {
-        return owner;
+        return this.owner;
     }
 
     /*
@@ -152,7 +171,4 @@ public class RealEstate {
                 '}';
     }
 
-    public Object getPostnummer() {
-        return null;
-    }
 }
