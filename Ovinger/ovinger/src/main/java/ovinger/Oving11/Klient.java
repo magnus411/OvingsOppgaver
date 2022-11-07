@@ -6,14 +6,6 @@ public class Klient {
 
     private static int menuChoice;
 
-    /**
-     * Presents the menu for the user, and awaits input from the user. The menu *
-     * choice selected by the user is being returned.
-     *
-     * @return the menu choice by the user as a positive number starting from 1. *
-     *         If 0 is returned, the user has entered a wrong value
-     */
-
     public static void main(String[] args) {
         RealEstateRegister eiendomsRegister = new RealEstateRegister();
         System.out.println("You have chosen to add a property");
@@ -112,14 +104,15 @@ public class Klient {
                 System.out.println("Municipality number: ");
                 System.out.println("");
 
-                sc11 = new Scanner(System.in);
+                Scanner sc11 = new Scanner(System.in);
                 String municipalityName2 = sc11.nextLine();
-                sc12 = new Scanner(System.in);
+                Scanner sc12 = new Scanner(System.in);
                 int municipalityNumber2 = sc12.nextInt();
                 System.out.println();
 
                 System.out.println("Is this the property you want to remove?");
-                System.out.println(getRealEstateByMunicipality(municipalityName2, municipalityNumber2));
+                System.out
+                        .println(eiendomsRegister.getRealEstateByMunicipality(municipalityName2, municipalityNumber2));
 
                 System.out.println("Please enter Y or N");
                 Scanner sc13 = new Scanner(System.in);
@@ -129,6 +122,10 @@ public class Klient {
                 } else {
                     System.out.println("You have chosen to not remove the property");
                 }
+                break;
+            case 9:
+                System.out.println("You have chosen to quit");
+                System.exit(0);
                 break;
         }
     }
