@@ -128,3 +128,16 @@ public class Matrise {
     }
 
 }
+/*
+ * 
+ * P - Previous
+ * N - NEXT line
+ * F - Forwards
+ * B - Backwards
+ * Ctrl Space - markering
+ * W - ctrl x
+ * Y - Yank
+ * K - kill
+ * P
+ * 
+ */

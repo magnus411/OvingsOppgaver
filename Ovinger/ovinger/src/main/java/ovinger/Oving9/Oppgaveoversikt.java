@@ -75,15 +75,20 @@ public class Oppgaveoversikt {
      * @param navn
      * @return Student
      */
-    public Student getStudent(String navn) {
+    public String getStudent(String navn) {
 
         for (int i = 0; i < students.size(); i++) {
             if (students.get(i).getNavn().equals(navn)) {
-                return students.get(i);
+                return students.get(i).getNavn();
             }
         }
         return null;
 
+    }
+
+    public static void main(String[] args) {
+        Oppgaveoversikt oversikt = new Oppgaveoversikt();
+        System.out.println(oversikt.getStudent("Are"));
     }
 
 }

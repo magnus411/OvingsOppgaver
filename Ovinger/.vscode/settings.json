@@ -3,5 +3,6 @@
   "docwriter.progress.trackClasses": true,
   "docwriter.progress.trackFunctions": true,
   "docwriter.progress.trackTypes": true,
-  "docwriter.progress.trackMethods": true
+  "docwriter.progress.trackMethods": true,
+  "java.configuration.updateBuildConfiguration": "interactive"
 }

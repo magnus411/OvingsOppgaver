@@ -1,3 +1,4 @@
+
 package ovinger.Oving11;
 
 public class RealEstate {
@@ -7,11 +8,11 @@ public class RealEstate {
     int lotNumber;
     int sectionNumber;
     String name;
-    String area;
+    int area;
     String owner;
 
     public RealEstate(String municipalityName, int municipalityNumber, int lotNumber, int sectionNumber, String name,
-            String area, String owner) {
+            int area, String owner) {
         this.municipalityName = municipalityName;
         this.municipalityNumber = municipalityNumber;
 
@@ -63,7 +64,7 @@ public class RealEstate {
         this.name = name;
     }
 
-    public String getArea() {
+    public int getArea() {
         return area;
     }
 
@@ -79,6 +80,10 @@ public class RealEstate {
         this.owner = owner;
     }
 
+    public String getUniqueID() {
+        return (this.municipalityNumber + "-" + this.lotNumber + "/" + this.sectionNumber);
+    }
+
     public String toString() {
         return "Eiendom{" +
                 "municipalityNumber=" + municipalityNumber +
@@ -89,5 +94,9 @@ public class RealEstate {
                 ", area='" + area + '\'' +
                 ", owner='" + owner + '\'' +
                 '}';
+    }
+
+    public Object getPostnummer() {
+        return null;
     }
 }
