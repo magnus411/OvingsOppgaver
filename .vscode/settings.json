@@ -1,8 +1,8 @@
 {
-  "docwriter.style": "Javadoc",
+  "docwriter.style": "Auto-detect",
   "docwriter.progress.trackClasses": true,
   "docwriter.progress.trackTypes": true,
   "docwriter.progress.trackFunctions": true,
   "java.configuration.updateBuildConfiguration": "interactive",
-  "docwriter.progress.trackMethods": false
+  "docwriter.progress.trackMethods": true
 }

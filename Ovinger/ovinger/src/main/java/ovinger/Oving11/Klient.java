@@ -30,14 +30,15 @@ public class Klient {
         System.out.println("2. List all properties");
         System.out.println("3. Search property");
         System.out.println("4. Calculate average area");
-        // TODO: Add more menus
+        System.out.println("5. Get unique IDs");
+        System.out.println("6. Get number of real estates");
+        System.out.println("7. Remove property");
         System.out.println("9. Quit");
         System.out.println("\nPlease enter a number between 1 and 9.\n");
         Scanner sc = new Scanner(System.in);
         int menuChoice = sc.nextInt();
 
         switch (menuChoice) {
-
             case 1:
                 System.out.println("You have chosen to add a property");
                 System.out.println("Please enter the following information");
@@ -88,13 +89,46 @@ public class Klient {
                 int LotNr1 = sc9.nextInt();
                 Scanner sc10 = new Scanner(System.in);
                 int SectionNr1 = sc10.nextInt();
-
                 System.out.println(eiendomsRegister.getRealEstateByMLS(municipalityNumber1, LotNr1, SectionNr1));
                 break;
 
             case 4:
                 System.out.println("You have chosen to calculate the average area");
                 System.out.println(eiendomsRegister.getRealEstateAvrArea());
+                break;
+            case 5:
+                System.out.println("You have chosen to get unique IDs");
+                System.out.println(eiendomsRegister.getUniqueIDforAll());
+                break;
+            case 6:
+                System.out.println("You have chosen to get number of real estates");
+                System.out.println(eiendomsRegister.getNumberOfRealEstate());
+                break;
+            case 7:
+                System.out.println("You have chosen to remove a property");
+                System.out.println("Please enter the following information");
+                System.out.println("");
+                System.out.println("Municipality name:");
+                System.out.println("Municipality number: ");
+                System.out.println("");
+
+                sc11 = new Scanner(System.in);
+                String municipalityName2 = sc11.nextLine();
+                sc12 = new Scanner(System.in);
+                int municipalityNumber2 = sc12.nextInt();
+                System.out.println();
+
+                System.out.println("Is this the property you want to remove?");
+                System.out.println(getRealEstateByMunicipality(municipalityName2, municipalityNumber2));
+
+                System.out.println("Please enter Y or N");
+                Scanner sc13 = new Scanner(System.in);
+                String answer = sc13.nextLine();
+                if (answer.equals("Y")) {
+                    eiendomsRegister.deleteRealEstate(municipalityName2, municipalityNumber2);
+                } else {
+                    System.out.println("You have chosen to not remove the property");
+                }
                 break;
         }
     }
